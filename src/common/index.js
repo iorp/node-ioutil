@@ -8,6 +8,7 @@ module.exports = {
     network:require('./network'),
     strings:require('./strings'),
     strings:require('./functions'),
+    objects:require('./objects'),
     
 
 

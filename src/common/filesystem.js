@@ -357,9 +357,12 @@ var {datatype = null, merge = false, encoding = 'utf-8' }= options;
             content = JSON.stringify(mergedData, null, 4);
         }
 
-        fs.writeFileSync(uri, content, { encoding });
-
-        return {   code: 'WriteFileSuccess' };
+        try{
+          fs.writeFileSync(uri, content, { encoding });
+        }catch(e){
+            console.error(e)
+        }
+        return {   code: 'WriteFileSuccess' ,uri:uri};
     } catch (error) {
         return { error: true, code: 'WriteFileError', exception: error.message };
     }
@@ -372,7 +375,7 @@ var {datatype = null, merge = false, encoding = 'utf-8' }= options;
  * @param {Object} options - Options for the read operation.
  * @param {string} options.datatype - The datatype of the content ('JSON' for JSON data). Defaults to null.
  * @param {string} options.encoding - The encoding of the file. Defaults to 'utf-8'.
- * @returns {Object} - An object with information about the success of the read operation.
+ * @returns {Object} - An object with information about the success of the read operation. Retrieve object.data or object.error
  * @throws {Object} - An object with error information if an exception occurs during the read operation.
  */ 
 function readFile(uri, options={}) { 
@@ -409,8 +412,8 @@ function readFile(uri, options={}) {
  * @param {Function} [options.fileFilter=() => true] - A function to filter files based on custom criteria.
  * @param {Function} [options.dirFilter=() => true] - A function to filter directories based on custom criteria.
  */
-function iterate(uri, callback, options = {}) {
-    console.log('[iterate]','uri',uri)
+function iterate(uri, callback, options = {},level=0) {
+   // console.log('[iterate]','uri',uri)
     // Destructure options with default values
     var { fileFilter = () => true, dirFilter = () => true } = options;
   
@@ -424,13 +427,13 @@ function iterate(uri, callback, options = {}) {
         // Check if the directory passes the custom filter
         if (dirFilter(filePath)) {
           // Recursively iterate through the subdirectory
-          iterate(filePath, callback, options);
+          iterate(filePath, callback, options,level+1);
         }
       } else {
         // It's a file, check if it passes the custom filter
         if (fileFilter(filePath)) {
           // Invoke the callback for each file
-          callback(filePath);
+          callback(filePath,level);
         }
       }
     });

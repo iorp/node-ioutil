@@ -1,7 +1,7 @@
 {
   "name": "@ioutil/node",
   "public": "true",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple npm installable Node module package",
   "main": "lib/index.js",
   "scripts": {

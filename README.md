@@ -12,12 +12,7 @@ Script postbuild will perform a npm link , see postbuild scripts at [package](./
    npm run build
    ```
 
-2. Eventually test stuff
-  ```bash
-   node tests/test.js
-   ```
  
-
 ## Tests 
 
 ```bash
@@ -44,7 +39,11 @@ node test/development/devjs/call.js greet Gatete
 node test/development/devjs/readEnvFile.js
 node test/development/devjs/writeEnvFile.js
 node test/development/devjs/initEnv.js
-
-node test/development/docs/extractDocBlocks.js
+ 
 
 ```
+
+
+
+
+npm publish --force

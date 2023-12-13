@@ -3,5 +3,5 @@
 
 module.exports = { 
     devjs : require('./devjs'),
-    turbodoc : require('./docs')
+    turbodoc : require('./turbodoc')
 };
