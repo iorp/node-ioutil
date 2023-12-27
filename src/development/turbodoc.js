@@ -865,10 +865,9 @@ const  parseStringJS=function(input, options) {
 
 
 
-const { iterate:iterateObject  }=require('../common/objects');
+const { iterate:iterateObject  }=require('../common/objects'); 
 const { iterate:iterateStruct ,readFile }=require('../common/filesystem');
-const path =require('path');
-
+ 
 const StructDrafterJS= class{ 
 
   constructor(uri,options={},parser=null,parserOptions={}){
@@ -1164,7 +1163,5 @@ return stack;
 module.exports={ 
   StringParserJS:StringParserJS,
   parseStringJS:parseStringJS,
-  StructDrafterJS:StructDrafterJS
-  // DocBuilder:StringDrafterJS,
-  // buildDoc:draftStringJS
+  StructDrafterJS:StructDrafterJS 
   }
