@@ -7,16 +7,17 @@
  * @returns {Object} - The merged object.
  */ 
 function merge(a,b) {
+    return JSON.parse(JSON.stringify({ ...a, ...b }));
 
-    return Object.keys(b||{}).reduce((merged, key) =>
-        ({
-            ...merged,
-            [key]: typeof b[key] === 'object' && !Array.isArray(b[key]) && a[key] ?
-                a[key].merge(b[key]) : b[key],
-        }), {
-            ...a
-        }
-    );
+    // return Object.keys(b||{}).reduce((merged, key) =>
+    //     ({
+    //         ...merged,
+    //         [key]: typeof b[key] === 'object' && !Array.isArray(b[key]) && a[key] ?
+    //             a[key].merge(b[key]) : b[key],
+    //     }), {
+    //         ...a
+    //     }
+    // );
 };
 
 /**
