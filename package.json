@@ -1,7 +1,7 @@
 {
   "name": "@ioutil/node",
   "public": "true",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "An organized node tool set.",
   "main": "lib/index.js",
   "scripts": {
