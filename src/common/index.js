@@ -9,7 +9,7 @@ module.exports = {
     strings:require('./strings'),
     strings:require('./functions'),
     objects:require('./objects'),
-    arrays:require('./arrays'),
+    // arrays:require('./arrays'),
 
 
 
