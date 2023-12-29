@@ -1,5 +1,5 @@
 
-const {merge}=require('../../../src/common/objects');
+const {deepMerge}=require('../../../src/common/objects');
  
 var a= {
     a:0,
@@ -16,4 +16,4 @@ var b= {
 }
 
 
-console.log(merge(a,b)); 
+console.log(deepMerge(a,b)); 

@@ -6,16 +6,14 @@ var obj= {
     b:{
         c:1
     }
-}
-
+} 
  
-
- iterate(obj,(key,val)=>{
-    console.log(key,val);
+ iterate(obj,(key,value,level,siblingIndex,parent,path)=>{
+    console.log(key,level,siblingIndex,path);
 }); 
 
 
-// Example usage
-// iterate({ a: 1, b: { c: 2, d: 3 }, e: 4 }, (key, value, level, siblingIndex) => {
+// // Example usage with level and siblingIndex
+// iterate({ a: 1, b: { c: 2, d: 3 }, e: 4 }, (key, value, level, siblingIndex,parent) => {
 //     console.log(`Key: ${key}, Value: ${value}, Level: ${level}, Sibling Index: ${siblingIndex}`);
 // });

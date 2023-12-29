@@ -41,8 +41,14 @@ node test/common/strings/searchr.js
  node test/common/objects/iterate.js 
  node test/common/objects/get.js 
  node test/common/objects/set.js 
- node test/common/objects/del.js 
- node test/common/objects/merge.js 
+ node test/common/objects/remove.js 
+ node test/common/objects/toggle.js  
+ node test/common/objects/deepMerge.js 
+ node test/common/objects/deepClone.js 
+
+  node test/common/arrays/get.js 
+  node test/common/arrays/set.js 
+  node test/common/arrays/recurse.js 
 
  
 node test/development/devjs/call.js greet Gatete
