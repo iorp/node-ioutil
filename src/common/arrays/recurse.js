@@ -11,12 +11,12 @@ function recurse(data, callback, path = []) {
     return data.map(item => {
         const currentPath = [...path, item.key];
         const newItem = callback(item, currentPath) || item;
-
+  
         if (item.children && item.children.length > 0) {
             newItem.children = recurse(item.children, callback, currentPath);
         }
-
+  
         return newItem;
     });
-}
+  }
 module.exports = recurse
