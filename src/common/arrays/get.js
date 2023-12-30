@@ -10,27 +10,26 @@
  */
 
 function get(data, path,defaultValue=null) {
-  if(typeof path=='string') path = path.split('.');
-  let current = data;
-
-  for (const [index, key] of path.entries()) {
-      if (typeof current === 'object' && !Array.isArray(current)) {
-          if (current[key]) {
-              current = current[key];
-          } else {
-              if (current.children) {
-                  current = current.children.find(item => item?.key === key);
-              } else {
-                  return defaultValue;
-              }
-          }
-      } else if (typeof current === 'object' && Array.isArray(current)) {
-          current = current.find(item => item?.key === key);
-      }
+    if(typeof path=='string') path = path.split('.');
+    let current = data;
+  
+    for (const [index, key] of path.entries()) {
+        if (typeof current === 'object' && !Array.isArray(current)) {
+            if (current[key]) {
+                current = current[key];
+            } else {
+                if (current.children) {
+                    current = current.children.find(item => item?.key === key);
+                } else {
+                    return defaultValue;
+                }
+            }
+        } else if (typeof current === 'object' && Array.isArray(current)) {
+            current = current.find(item => item?.key === key);
+        }
+    }
+  
+    return current;
   }
-
-  return current;
-}
-
  
 module.exports =get;
