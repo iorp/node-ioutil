@@ -35,9 +35,10 @@ const treeData = [
  
 // writing on PROPERTIES
   set(treeData, ['item1','subItem1', 'fish'], 'tuna');
- console.log(get(treeData,['item1','subItem1', 'fish']))
- set(treeData, 'item1.subItem1.fish', 'hake'); 
- console.log(get(treeData,['item1','subItem1', 'fish']))
+  console.log(JSON.stringify(treeData,null,2))
+//  console.log(get(treeData,['item1','subItem1', 'fish']))
+//  set(treeData, 'item1.subItem1.fish', 'hake'); 
+//  console.log(get(treeData,['item1','subItem1', 'fish']))
  
 
 
